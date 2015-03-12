@@ -21,6 +21,7 @@
     "typescript": "^1.4.1"
   },
   "devDependencies": {
+    "gulp": "^3.8.11",
     "typescript": "^1.4.1"
   }
 }
