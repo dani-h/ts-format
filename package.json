@@ -1,0 +1,26 @@
+{
+  "name": "ts-format",
+  "version": "0.0.1",
+  "description": "",
+  "main": "formatter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dani-h/ts-format.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dani-h/ts-format/issues"
+  },
+  "homepage": "https://github.com/dani-h/ts-format",
+  "dependencies": {
+    "minimist": "^1.1.1",
+    "typescript": "^1.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^1.4.1"
+  }
+}
