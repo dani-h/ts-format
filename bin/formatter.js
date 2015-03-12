@@ -4,16 +4,10 @@ var ts = require("typescript");
 var fs = require("fs");
 var formatter;
 (function (formatter) {
-    formatter.readText = function (filename) {
-        var text = '';
-        if (filename == '-') {
-            text = fs.readFileSync('/dev/stdin').toString();
-        }
-        else {
-            text = fs.readFileSync(filename).toString();
-        }
-        var result = format(text);
-        console.log('res', result);
+    var getFormattedText = function (filename, formatOpts) {
+        filename = filename === '-' ? '/dev/stdin' : filename;
+        var input = fs.readFileSync(filename).toString();
+        return format(input);
     };
     // Note: this uses ts.formatting which is part of the typescript 1.4 package but is not currently
     //       exposed in the public typescript.d.ts. The typings should be exposed in the next release.
@@ -58,7 +52,7 @@ var formatter;
             InsertSpaceAfterFunctionKeywordForAnonymousFunctions: false,
             InsertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis: false,
             PlaceOpenBraceOnNewLineForFunctions: false,
-            PlaceOpenBraceOnNewLineForControlBlocks: false
+            PlaceOpenBraceOnNewLineForControlBlocks: false,
         };
     }
     function fixupParentReferences(sourceFile) {
